@@ -59,9 +59,11 @@ var myItem;
 describe('ShoppingList', function () {
   var myList;
   var myItem;
+  var myItem2;
   beforeEach(function () {
     myList = new ShoppingList();
     myItem = new ShoppingListItem('milk','organic goats milk fos the Baby');
+    myItem2 = new ShoppingListItem('soylent','no flavor please')
   });
   describe('Constructor', function () {
     it('should be a class', function () {
@@ -90,6 +92,14 @@ describe('ShoppingList', function () {
       myList.addItem(myItem);
       myList.removeItem(myItem);
       myList.items.should.deep.equal([]);
+    });
+    it('should render out all items of shopping list', function () {
+      myList.addItem(myItem);
+      myList.addItem(myItem2);
+      myList.render()..should.equal('<li class=\"completed_false\"><span>milk</span> <span>organic goats milk fos the Baby</span></li><li class=\"completed_false\"><span>soylent</span> <span>no flavor please</span></li>');
+
+
+
     });
   });
 
