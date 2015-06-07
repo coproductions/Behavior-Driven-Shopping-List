@@ -3,9 +3,12 @@ var should = chai.should;
 var expect = chai.expect;
 chai.should();
 
-var myItem = new ShoppingListItem('milk','organic goats milk fos the Baby');
+
 
 describe('ShoppingListItem', function () {
+  beforeEach(function () {
+    var myItem = new ShoppingListItem('milk','organic goats milk fos the Baby');
+  });
   describe('Constructor', function () {
     it('should have a property called name and a description', function () {
       myItem.name.should.equal('milk');
@@ -47,7 +50,9 @@ describe('ShoppingListItem', function () {
 
 
 describe('ShoppingList', function () {
-  var myList = new ShoppingList;
+  beforeEach(function () {
+    var myList = new ShoppingList();
+  });
   describe('Constructor', function () {
     it('should be a class', function () {
       myList.should.be.an.instanceof(ShoppingList);
