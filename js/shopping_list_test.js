@@ -96,7 +96,7 @@ describe('ShoppingList', function () {
     it('should render out all items of shopping list', function () {
       myList.addItem(myItem);
       myList.addItem(myItem2);
-      myList.render()..should.equal('<li class=\"completed_false\"><span>milk</span> <span>organic goats milk fos the Baby</span></li><li class=\"completed_false\"><span>soylent</span> <span>no flavor please</span></li>');
+      myList.render().should.equal('<li class=\"completed_false\"><span>milk</span> <span>organic goats milk fos the Baby</span></li><li class=\"completed_false\"><span>soylent</span> <span>no flavor please</span></li>');
 
 
 
