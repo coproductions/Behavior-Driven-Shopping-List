@@ -16,6 +16,7 @@ var myItem;
   });
 
     it('should have a property called name and a description', function () {
+
       myItem.name.should.equal('milk');
       myItem.description.should.equal('organic goats milk fos the Baby');
     });
@@ -48,6 +49,7 @@ var myItem;
     });
     it('render should return an html content', function () {
       myItem.render().should.be.equal('<li class=\"completed_false\"><span>milk</span> <span>organic goats milk fos the Baby</span></li>');
+
     });
   });
 });
@@ -55,8 +57,9 @@ var myItem;
 
 
 describe('ShoppingList', function () {
+  var myList;
   beforeEach(function () {
-    var myList = new ShoppingList();
+    myList = new ShoppingList();
   });
   describe('Constructor', function () {
     it('should be a class', function () {
