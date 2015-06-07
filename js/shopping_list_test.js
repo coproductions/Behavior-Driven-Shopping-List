@@ -1,18 +1,20 @@
-var chai = require('chai');
-var should = chai.should;
+
+var should = chai.should();
 var expect = chai.expect;
-chai.should();
+
 
 
 
 describe('ShoppingListItem', function () {
-  beforeEach(function () {
-    var myItem = new ShoppingListItem('milk','organic goats milk fos the Baby');
-  });
+  // beforeEach(function () {
+  //   var myItem = new ShoppingListItem('milk','organic goats milk fos the Baby');
+  // });
   describe('Constructor', function () {
     it('should have a property called name and a description', function () {
-      myItem.name.should.equal('milk');
-      myItem.description.should.equal('organic goats milk fos the Baby');
+      var hi = 5;
+      hi.should.be.equal(5);
+      // myItem.name.should.equal('milk');
+      // myItem.description.should.equal('organic goats milk fos the Baby');
     });
     it('should be a Class', function () {
       myItem.should.be.an.instanceof(ShoppingListItem);
@@ -42,7 +44,7 @@ describe('ShoppingListItem', function () {
       myItem.is_done.should.be(false);
     });
     it('render should return an html content', function () {
-      myItem.render().should.be.equal.to("<li class=\"completed_[is_done]\"><span>[name]</span> <span>[description]</span></li>. example: <li class=\"completed_false\"><span>milk</span> <span>organic goats milk fos the Baby</span></li>");
+      myItem.render().should.be.equal("<li class=\"completed_[is_done]\"><span>[name]</span> <span>[description]</span></li>. example: <li class=\"completed_false\"><span>milk</span> <span>organic goats milk fos the Baby</span></li>");
     });
   });
 });
