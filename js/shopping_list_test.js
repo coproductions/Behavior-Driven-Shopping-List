@@ -40,7 +40,7 @@ var myItem;
     });
     it('check should set is_done to true', function () {
       myItem.check();
-      myItem.is_done.should.be(true);
+      myItem.is_done.should.equal(true);
     });
     it('uncheck should set is_done to false', function () {
       myItem.check();
@@ -48,7 +48,7 @@ var myItem;
       myItem.is_done.should.be(false);
     });
     it('render should return an html content', function () {
-      myItem.render().should.be.equal("<li class=\"completed_[is_done]\"><span>[name]</span> <span>[description]</span></li>. example: <li class=\"completed_false\"><span>milk</span> <span>organic goats milk fos the Baby</span></li>");
+      myItem.render().should.be.equal("<li class=\"completed_false\"><span>[name]</span> <span>[description]</span></li>. example: <li class=\"completed_false\"><span>milk</span> <span>organic goats milk fos the Baby</span></li>");
     });
   });
 });
