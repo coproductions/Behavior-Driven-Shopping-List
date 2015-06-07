@@ -58,8 +58,10 @@ var myItem;
 
 describe('ShoppingList', function () {
   var myList;
+  var myItem;
   beforeEach(function () {
     myList = new ShoppingList();
+    myItem = new ShoppingListItem('milk','organic goats milk fos the Baby');
   });
   describe('Constructor', function () {
     it('should be a class', function () {
@@ -81,12 +83,13 @@ describe('ShoppingList', function () {
     });
     it('addItem should add item to items array', function () {
       myList.addItem(myItem);
-      myList.items[0].should.deepEqual(myItem);
+      console.log(myList.items[0]);
+      myList.items[0].name.should.equal('milk');
     });
     it('removeItem should remove item from items array', function () {
       myList.addItem(myItem);
       myList.removeItem(myItem);
-      myList.items.should.deepEqual([]);
+      myList.items.should.deep.equal([]);
     });
   });
 
