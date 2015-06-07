@@ -18,5 +18,11 @@ function ShoppingList() {
       }
     }
   };
-  this.render = function() {};
+  this.render = function() {
+    var string = '';
+    for (var i = 0; i < this.items.length; i++) {
+      string += (this.items[i].render());
+    }
+    return string;
+  };
 }
