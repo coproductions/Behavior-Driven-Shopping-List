@@ -93,6 +93,10 @@ describe('ShoppingList', function () {
       myList.removeItem(myItem);
       myList.items.should.deep.equal([]);
     });
+    it('should throw an error when removing wrong item from a list', function () {
+      myList.addItem(myItem);
+      expect(myList.removeItem.bind(myList,myItem2)).to.throw('Thats not in the Shopping List')
+    });
     it('should render out all items of shopping list', function () {
       myList.addItem(myItem);
       myList.addItem(myItem2);
