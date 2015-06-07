@@ -12,9 +12,9 @@ describe('ShoppingListItem', function () {
   describe('Constructor', function () {
     it('should have a property called name and a description', function () {
       var hi = 5;
-      hi.should.be.equal(5);
-      // myItem.name.should.equal('milk');
-      // myItem.description.should.equal('organic goats milk fos the Baby');
+
+      myItem.name.should.equal('milk');
+      myItem.description.should.equal('organic goats milk fos the Baby');
     });
     it('should be a Class', function () {
       myItem.should.be.an.instanceof(ShoppingListItem);
