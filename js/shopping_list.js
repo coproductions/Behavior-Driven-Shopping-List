@@ -2,6 +2,9 @@ function ShoppingList() {
   this.items = [];
   this.addItem = function(item) {
     this.items.push(item);
+    var thisItemsId = this.items.length - 1;
+    item.index = thisItemsId;
+    item.parentList = this.items;
   };
   this.removeItem = function(item) {
     if (arguments.length === 0) {
