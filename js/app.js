@@ -36,7 +36,6 @@ function add_to_shopping_list(){
 
 
 function changeCheckedStatus(){
-  console.log(this);
   var index = this.id;
   var thisItem = ourShoppingList.items[index];
   if(thisItem.is_done){

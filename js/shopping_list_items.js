@@ -35,7 +35,7 @@ function ShoppingListItem(name, description) {
     }
     console.log('<li class=\"completed_' + this.is_done + '\"><span>' + this.name + '</span> <span>' + this.description + '</span></li>'+checkBoxSnippet)
 
-    return checkBoxSnippet+'<li class=\"completed_' + this.is_done + '\"><span>' + this.name + '</span> <span>' + this.description + '</span></li>'+deleteButton;
+    return '<li class=\"completed_' + this.is_done + '\">'+checkBoxSnippet+'<span>' + this.name + '</span> <span>' + this.description + '</span>'+deleteButton+'</li>';
 
   };
 }
