@@ -29,13 +29,13 @@ function ShoppingListItem(name, description) {
     var deleteButton = '<button id='+index+' class="deleteButton">x</button>';
 
     if(this.is_done){
-      var checkBoxSnippet = '<input type="checkbox" class="shoppingItem" id='+index+'  checked><br>';
+      var checkBoxSnippet = '<input type="checkbox" class="shoppingItem" id='+index+'  checked>';
     } else {
-      checkBoxSnippet = '<input type="checkbox" class="shoppingItem" id='+index+'  ><br>';
+      checkBoxSnippet = '<input type="checkbox" class="shoppingItem" id='+index+'  >';
     }
-    console.log('<li class=\"completed_' + this.is_done + '\"><span>' + this.name + '</span> <span>' + this.description + '</span></li>'+checkBoxSnippet)
+    console.log('<li class=\"completed_' + this.is_done + '\"><span>' + this.name + '</span> <span>' +': '+ this.description + '</span></li>'+checkBoxSnippet)
 
-    return '<li class=\"completed_' + this.is_done + '\">'+checkBoxSnippet+'<span>' + this.name + '</span> <span>' + this.description + '</span>'+deleteButton+'</li>';
+    return '<li class=\"completed_' + '     '+this.is_done + '\"><p>'+checkBoxSnippet+'<label>' + this.name + '</label> <span class=\'description\'>' + this.description +'    '+ deleteButton+'</span></p></li>';
 
   };
 }

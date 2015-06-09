@@ -1,0 +1,12 @@
+
+.shoppingItem{
+  display: inline-block;
+}
+.description{
+  font-family: helvetica;
+  font-weight: lighter;
+  font-size: small;
+}
+p {
+  display: inline-block;
+}
