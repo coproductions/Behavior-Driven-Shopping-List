@@ -1,8 +1,8 @@
 function ShoppingListItem(name, description) {
   //this.parentList = null;
   //this.index = null;
-  this.name = name;
-  this.description = description;
+  this.name = name || '.  .';
+  this.description = description || '.  .';
   this.is_done = false;
   this.editable = false;
   this.getEditSave = function(){
