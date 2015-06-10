@@ -6,9 +6,9 @@ function ShoppingListItem(name, description) {
   this.is_done = false;
   this.getIndex = function(){
     console.log(this.parentList)
-    var parentArray = this.parentList;
-    for (var i = 0; i < parentArray.length; i++) {
-      if(parentArray[i].name === this.name){
+    var timeStampsArray = this.timeStampsArray;
+    for (var i = 0; i < timeStampsArray.length; i++) {
+      if(timeStampsArray[i] === this.timeStamp){
         console.log('theinumbner',i)
         return i;
       }
@@ -24,7 +24,7 @@ function ShoppingListItem(name, description) {
   this.render = function() {
 
     var index = this.getIndex();
-    console.log('renderindex',index)
+
 
     var deleteButton = '<button id='+index+' class="deleteButton">x</button>';
 
