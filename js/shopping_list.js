@@ -1,10 +1,8 @@
 function ShoppingList() {
   this.items = [];
-  this.timeStampsArray = [];
   this.addItem = function(item) {
     var timeStamp = Date.now();
     this.items.push(item);
-    this.timeStampsArray.push(timeStamp);
     var thisItemsId = this.items.length - 1;
     item.index = thisItemsId;
     item.timeStamp = timeStamp;
@@ -15,7 +13,6 @@ function ShoppingList() {
     if (arguments.length === 0) {
       if(this.items.length !== 0) {
         this.items.pop();
-        this.timeStampsArray.pop();
       } else {
         return false;
       }
@@ -25,7 +22,6 @@ function ShoppingList() {
       } else {
         var idOfItemToDelete = this.items.indexOf(item);
         this.items.splice(idOfItemToDelete,1);
-        this.timeStampsArray.splice(idOfItemToDelete,1);
       }
     }
   };

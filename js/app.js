@@ -1,5 +1,7 @@
 var addButton = document.getElementById('add_shopping_list_item_button');
 addButton.addEventListener("click", add_to_shopping_list);
+var purgeButton = document.getElementById('purgeButton');
+purgeButton.addEventListener("click", purge);
 
 var checkbox = document.getElementsByClassName('shoppingItem');
 //console.log(typeof checkbox)
@@ -11,6 +13,32 @@ var saveButton = document.getElementsByClassName('save');
 
 
 var ourShoppingList = new ShoppingList();
+
+
+function purge(){
+  ourShoppingList.items.forEach(function(val){
+    if(val.is_done){
+      ourShoppingList.removeItem(val)
+    }
+     var snippetString = ourShoppingList.render();
+  //console.log(snippetString);
+  // newDiv = document.createElement('div');
+  // newDiv.innerHTML = snippetString;
+  document.getElementById('content').innerHTML = snippetString;
+  document.getElementById('title').value ='';
+  document.getElementById('description').value = '';
+  Array.prototype.forEach.call(checkbox,function(val){
+    val.addEventListener("change",changeCheckedStatus);
+  })
+  Array.prototype.forEach.call(deleteButton,function(val){
+    val.addEventListener("click",removeItemButtonClicked);
+  })
+  Array.prototype.forEach.call(editButton,function(val){
+    val.addEventListener("click",editButtonClicked);
+  })
+
+  })
+}
 
 function add_to_shopping_list(){
   var itemName = document.getElementById('title').value;

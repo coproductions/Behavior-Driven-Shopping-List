@@ -10,3 +10,24 @@
 p {
   display: inline-block;
 }
+
+#container {
+  display: inline-block;
+
+  border-color: blue;
+  border-width: 3px;
+  border-style: solid;
+  border: solid 3px;
+  width: 600px;
+  margin:  auto;
+}
+body{
+  text-align: center;
+}
+li {
+  list-style-type: none;
+}
+button{
+  padding: 1%;
+  margin: 3%;
+}
