@@ -1,6 +1,4 @@
 function ShoppingListItem(name, description) {
-  //this.parentList = null;
-  //this.index = null;
   this.name = name || '.  .';
   this.description = description || '.  .';
   this.is_done = false;
@@ -26,11 +24,9 @@ function ShoppingListItem(name, description) {
     } else return '';
   };
   this.getIndex = function(){
-    console.log(this.parentList)
-    var timeStampsArray = this.timeStampsArray;
-    for (var i = 0; i < timeStampsArray.length; i++) {
-      if(timeStampsArray[i] === this.timeStamp){
-        console.log('theinumbner',i)
+    var parentArray = this.parentList;
+    for (var i = 0; i < parentArray.length; i++) {
+      if(parentArray[i].timeStamp === this.timeStamp){
         return i;
       }
     };

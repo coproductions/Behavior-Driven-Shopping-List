@@ -35,12 +35,14 @@ function add_to_shopping_list(){
     val.addEventListener("click",editButtonClicked);
   })
 
+    // checkbox[0].addEventListener('click',changeCheckedStatus);
 
 }
 
 
 function changeCheckedStatus(){
   var index = this.id;
+  console.log('this id',this.type)
   var thisItem = ourShoppingList.items[index];
   if(thisItem.is_done){
     thisItem.uncheck();
