@@ -5,7 +5,8 @@ var checkbox = document.getElementsByClassName('shoppingItem');
 //console.log(typeof checkbox)
 
 var deleteButton = document.getElementsByClassName('deleteButton');
-
+var editButton = document.getElementsByClassName('edit');
+var saveButton = document.getElementsByClassName('save');
 
 
 
@@ -29,6 +30,9 @@ function add_to_shopping_list(){
   })
   Array.prototype.forEach.call(deleteButton,function(val){
     val.addEventListener("click",removeItemButtonClicked);
+  })
+  Array.prototype.forEach.call(editButton,function(val){
+    val.addEventListener("click",editButtonClicked);
   })
 
 
@@ -57,5 +61,43 @@ function removeItemButtonClicked(){
   Array.prototype.forEach.call(deleteButton,function(val){
     val.addEventListener("click",removeItemButtonClicked);
   })
+  Array.prototype.forEach.call(editButton,function(val){
+    val.addEventListener("click",editButtonClicked);
+  })
 
 }
+
+function editButtonClicked(){
+  var index = this.id;
+  var thisItem = ourShoppingList.items[index];
+  thisItem.editable = true;
+  var snippetString = ourShoppingList.render();
+  document.getElementById('content').innerHTML = snippetString;
+  Array.prototype.forEach.call(saveButton,function(val){
+    val.addEventListener("click",saveButtonClicked);
+  })
+
+}
+
+function saveButtonClicked(){
+   var index = this.id;
+   var thisItem = ourShoppingList.items[index];
+    var thisItem = ourShoppingList.items[index];
+    var newName = document.getElementById('editedName').innerHTML;
+    var newDescription = document.getElementById('editedDescription').innerHTML;
+    thisItem.editable = false;
+    thisItem.name = newName;
+    thisItem.description = newDescription;
+    var snippetString = ourShoppingList.render();
+  document.getElementById('content').innerHTML = snippetString;
+  Array.prototype.forEach.call(checkbox,function(val){
+    val.addEventListener("change",changeCheckedStatus);
+  })
+  Array.prototype.forEach.call(deleteButton,function(val){
+    val.addEventListener("click",removeItemButtonClicked);
+  })
+  Array.prototype.forEach.call(editButton,function(val){
+    val.addEventListener("click",editButtonClicked);
+  })
+
+};
